@@ -2,14 +2,16 @@ import "./App.css";
 import { Component } from "react";
 
 function Buttons() {
-  // functionBox = () => {
-  //   console.log("working");
-  // };
+// function  functionBox() {
+//     let condition = true ;
+//     console.log(condition);
+//     console.log("working");
+//   };
   return (
     <div className="Buttons">
       <button
         className="button1"
-        // onclick={this.functionBox}
+        // onClick={ functionBox}
       >
         To see styling in Functional component
       </button>
@@ -37,6 +39,7 @@ function Functional() {
         borderRadius: "25px",
       }}
     >
+      
       <h1>This is created using Functional Based Components.</h1>
       <p> This is done using external css</p>
       <p style={{ color: "white" }}>This is done using inline css</p>
@@ -68,6 +71,12 @@ class ClassCompo extends Component {
   }
 }
 export { ClassCompo };
+
+
+
+
+
+
 
 // import React, { Component } from "react";
 

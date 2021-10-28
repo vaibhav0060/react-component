@@ -1,5 +1,10 @@
-import { Component } from "react";
+// import { Component } from "react";
 
-class Transaction extends Component {}
+// class Transaction extends Component {
+//   render() {
+//     return;
+//   }
+// }
 
-export { Transaction };
+// export { Transaction };
+// // import { app } from "./";
