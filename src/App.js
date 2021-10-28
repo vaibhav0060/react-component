@@ -1,20 +1,47 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Title from "./title";
-import Buttons from "./content";
+// import Buttons from "./content";
+import { Component } from "react";
 import { Functional } from "./content";
 import { ClassCompo } from "./content";
-function App() {
-  return (
-    <div className="App">
-      <Title />
-      <Buttons />
-      <div className="flexCompo">
-        <Functional />
-        <ClassCompo />
+// import { render } from "@testing-library/react";
+class App extends Component {
+  state = {
+    functionalVisible: false,
+    classVisible: false,
+  };
+  functionalrender() {
+    let functionalVisible = !this.state.functionalVisible;
+    this.setState({ functionalVisible });
+  }
+  classrender() {
+    let classVisible = !this.state.classVisible;
+    this.setState({ classVisible });
+  }
+  render() {
+    return (
+      <div className="App">
+        <Title />
+        <div className="Buttons">
+          <button
+            className="button1"
+            onClick={this.functionalrender.bind(this)}
+          >
+            To see styling in Functional component
+          </button>
+          <button className="button2" onClick={this.classrender.bind(this)}>
+            To see styling in Class component
+          </button>
+        </div>
+        <div className="flexCompo">
+          {this.state.functionalVisible ? <Functional /> : <div></div>}
+          {/* { if (this.state.functionalVisible) {<Functional />} else {<div></div>}} */}
+          {this.state.classVisible ? <ClassCompo /> : <div></div>}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
